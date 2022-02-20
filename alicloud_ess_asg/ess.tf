@@ -110,6 +110,7 @@ resource "alicloud_ess_scaling_configuration" "default" {
   instance_type     = data.alicloud_instance_types.default.instance_types.0.id
   security_group_id = alicloud_security_group.group.id
   password          = "PassWOrd123!"
+  # userdata reference here https://www.alibabacloud.com/help/zh/doc-detail/108461.htm#section-lu5-puw-zsj
   user_data         = file("${path.module}/userdata.sh")
   force_delete      = true
   active            = true
