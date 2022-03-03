@@ -114,4 +114,5 @@ resource "alicloud_ess_scaling_configuration" "default" {
   user_data         = file("${path.module}/userdata.sh")
   force_delete      = true
   active            = true
+  enable            = true
 }
