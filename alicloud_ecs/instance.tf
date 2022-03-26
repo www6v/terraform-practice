@@ -19,19 +19,18 @@ data "alicloud_zones" "default" {
 }
 
 resource "alicloud_vswitch" "vswitch" {
-  vpc_id            = alicloud_vpc.vpc.id
-  cidr_block        = "172.16.0.0/24"
-  zone_id           = data.alicloud_zones.default.zones[0].id
-  vswitch_name      = var.name
+  vpc_id       = alicloud_vpc.vpc.id
+  cidr_block   = "172.16.0.0/24"
+  zone_id      = data.alicloud_zones.default.zones[0].id
+  vswitch_name = var.name
 }
 
 resource "alicloud_instance" "instance" {
-
-  security_groups   = alicloud_security_group.group.*.id
+  security_groups = alicloud_security_group.group.*.id
 
   # series III
   instance_type              = "ecs.n4.large"
-  password = "PassWOrd123!"
+  password                   = "PassWOrd123!"
   system_disk_category       = "cloud_efficiency"
   system_disk_name           = "system_disk"
   system_disk_description    = "system_disk"
@@ -39,4 +38,5 @@ resource "alicloud_instance" "instance" {
   instance_name              = "foo"
   vswitch_id                 = alicloud_vswitch.vswitch.id
   internet_max_bandwidth_out = 10
+  user_data                  = var.jenkins ? file("install_jenkins.sh") : null
 }

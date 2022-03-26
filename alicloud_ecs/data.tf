@@ -1,5 +1,5 @@
 data "alicloud_images" "images_ds" {
-  owners     = "system"
+  owners      = "system"
   most_recent = true
-  name_regex = "^centos_7"
+  name_regex  = "^centos_7"
 }
