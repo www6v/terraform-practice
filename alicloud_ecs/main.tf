@@ -8,7 +8,5 @@ terraform {
 }
 
 provider "alicloud" {
-  access_key = "xxxxxxxx"
-  secret_key = "xxxxxxxx"
   region     = "cn-shanghai"
 }
