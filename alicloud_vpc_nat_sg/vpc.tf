@@ -69,18 +69,18 @@ resource "alicloud_security_group_rule" "allow_all_tcp" {
 
 resource "alicloud_instance" "instance" {
 
-  security_groups   = alicloud_security_group.group.*.id
+  security_groups = alicloud_security_group.group.*.id
 
   # series III
-  instance_type              = "ecs.n4.large"
-  password = "PassWOrd123!"
-  system_disk_category       = "cloud_efficiency"
-  system_disk_name           = "system_disk"
-  system_disk_description    = "system_disk"
-  image_id                   = data.alicloud_images.images_ds.images.0.id
-  instance_name              = "foo"
-  vswitch_id                 = alicloud_vswitch.enhanced.id
-  user_data                  = file("${path.module}/userdata.sh")
+  instance_type           = "ecs.n4.large"
+  password                = "PassWOrd123!"
+  system_disk_category    = "cloud_efficiency"
+  system_disk_name        = "system_disk"
+  system_disk_description = "system_disk"
+  image_id                = data.alicloud_images.images_ds.images.0.id
+  instance_name           = "foo"
+  vswitch_id              = alicloud_vswitch.enhanced.id
+  user_data               = file("${path.module}/userdata.sh")
   # Setting "internet_max_bandwidth_out" larger than 0 can allocate a public ip address for an instance.
   # internet_max_bandwidth_out = 10
 }

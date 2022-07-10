@@ -37,7 +37,7 @@ resource "alicloud_alb_load_balancer" "default" {
   }
   tags = {
     Environment = "demo",
-    Product = "nginx_alb_service"
+    Product     = "nginx_alb_service"
   }
   zone_mappings {
     vswitch_id = alicloud_vswitch.enhanced.id
@@ -77,7 +77,7 @@ resource "alicloud_alb_server_group" "default" {
   servers {
     description = "server1"
     port        = 80
-    server_id = alicloud_instance.instance.id
+    server_id   = alicloud_instance.instance.id
     server_ip   = alicloud_instance.instance.private_ip
     server_type = "Ecs"
     weight      = 100
