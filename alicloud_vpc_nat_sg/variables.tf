@@ -1,5 +1,5 @@
 variable "vpc_name" {
-  type = string
+  type    = string
   default = "vpc_terraform"
 }
 

@@ -83,4 +83,8 @@ resource "alicloud_instance" "instance" {
   user_data               = file("${path.module}/userdata.sh")
   # Setting "internet_max_bandwidth_out" larger than 0 can allocate a public ip address for an instance.
   # internet_max_bandwidth_out = 10
+  tags = {
+    "owner" : "tsj",
+    "env" : "demo"
+  }
 }
