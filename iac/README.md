@@ -205,7 +205,7 @@ terraform {
 
 [Terraform Cloud](https://www.terraform.io/cloud-docs)是一个帮助团队一起使用 Terraform 的应用程序。它在一个可靠的云上环境中运行Terraform，包括提供轻松访问tfstate、团队审批基础设施的更改、自动关联VCS(GitHub, GitLab, etc.)、云上资源预算评估、执行哨兵等功能。
 
-Terraform官方提供了非常详尽的使用[guide](https://learn.hashicorp.com/tutorials/terraform/cloud-sign-up?in=terraform/cloud-get-started)，请自行参考guide进行实验。
+Terraform官方提供了非常详尽的使用[guide](https://learn.hashicorp.com/tutorials/terraform/cloud-sign-up?in=terraform/cloud-get-started)，请自行参考guide进行实验。推荐[B站上的Terraform Cloud视频](https://www.bilibili.com/video/BV1ML411N7QD?spm_id_from=333.337.search-card.all.click&vd_source=d410ee9f043029e19d51c844fbb7caae)。
 
 基本的使用步骤如下：
 
@@ -240,7 +240,7 @@ module "tsj_demo" {
 
 ```
 
-
+阿里官方开源了非常多的[alicloud terraform modules](https://github.com/terraform-alicloud-modules)给大家使用。
 
 ## 6. 鸣谢及推荐
 
