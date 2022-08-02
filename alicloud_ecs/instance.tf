@@ -35,8 +35,12 @@ resource "alicloud_instance" "instance" {
   system_disk_name           = "system_disk"
   system_disk_description    = "system_disk"
   image_id                   = data.alicloud_images.images_ds.images.0.id
-  instance_name              = "foo"
+  instance_name              = "foobar"
   vswitch_id                 = alicloud_vswitch.vswitch.id
   internet_max_bandwidth_out = 10
   user_data                  = var.jenkins ? file("install_jenkins.sh") : null
+  tags = {
+    "owner" : "tsj",
+    "env" : "demo"
+  }
 }
